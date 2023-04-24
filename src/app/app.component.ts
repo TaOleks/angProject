@@ -8,29 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-title:string
+  title: string
 
-  selectCar(car: any) {
-    return (this.typesCar.find((it: any) => {
-
-      this.describeCar = car
-
-    }))
+  selectCar(car: DescribeCar) {
+    return this.describeCar = car
   };
 
-  watchAllTypesCars(type: any) {
-    this.allCars.filter((it) => {
-      if (it.type == type) {
-        this.typesCar.push(it)
-
-      }
-
-    })
+  watchAllTypesCars(type: string) {
+    return this.typeCar = type
 
   }
 
   describeCar: DescribeCar;
-  typesCar: any = [];
+  typeCar:string|null = null;
 
 
   allCars: DescribeCar[] = [
