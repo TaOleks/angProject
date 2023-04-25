@@ -9,11 +9,7 @@ import { DescribeCar } from '../app.component';
 })
 
 export class RightComponent {
-
-
 @Input() describeChaildCar:DescribeCar;
-
-
 }
 
 

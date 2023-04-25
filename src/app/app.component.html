@@ -3,34 +3,23 @@
     <left (typeCar)="watchAllTypesCars($event)"></left>
 
     <div class="alert alert-info">
-
-      <ng-container *ngIf="typeCar!==null; else noPrint" >
-
-        <ng-container *ngIf="typeCar=='mini'||typeCar=='big'||typeCar=='sedan';
-       else noCars">
-          <div *ngFor="let car of allCars">
-            <ng-container *ngIf="car.type == typeCar ">
+        <ng-container *ngIf="filteredArray.length; else noCars">
+          <div *ngFor="let car of filteredArray">
               <a href="#" (click)="selectCar(car)">{{car.marka}} {{car.model}}</a>
-            </ng-container>
           </div>
         </ng-container>
-
-      </ng-container>
-
-      <ng-template #noCars>
-        <p>Try again: (big, mini or sedan)</p>
-      </ng-template>
-
-      <ng-template #noPrint></ng-template>
-
     </div>
-
   </div>
 
   <div class="right-container">
     <ng-container *ngIf="describeCar; else showEmptyCar">
       <right [describeChaildCar]="describeCar"></right>
     </ng-container>
-    <ng-template #showEmptyCar> There is no car. Chose at least one from the list</ng-template>
   </div>
 </div>
+
+<ng-template #noCars>
+  <p>Try again: (big, mini or sedan)</p>
+</ng-template>
+
+<ng-template #showEmptyCar> There is no car. Chose at least one from the list</ng-template>

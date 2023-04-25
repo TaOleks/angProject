@@ -20,7 +20,6 @@ addCarInApp(value:string){
 choseTypeCar(value:string){
   this.typeCar.emit(value)
 }
-
 }
 
 
